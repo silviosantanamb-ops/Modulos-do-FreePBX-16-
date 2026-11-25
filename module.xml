@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-  <rawname>sipmessages</rawname>
-  <name>Painel de Mensagens</name>
-  <version>1.0.5</version>
-  <type>pbx</type>
+  <rawname>control_panel</rawname>
+  <name>Painel do Operador</name>
+  <version>16.3.4</version>
+  <type>tool</type>
   <category>Applications</category>
-  <description>Painel de mensagens internas SIP entre ramais PJSIP locais.</description>
-  <menuitems>
-    <sipmessages>Painel de Mensagens</sipmessages>
-  </menuitems>
-  <depends>
-    <version>13.0</version>
-  </depends>
+  <publisher>Custom FreePBX Module</publisher>
+  <license>GPLv2+</license>
+  <description>Painel do Operador para FreePBX 16 com monitorização de ramais, chamadas, conferências e notificações de mensagens.</description>
+  <menuitems><control_panel>Painel do Operador</control_panel></menuitems>
+  <depends><module>framework</module></depends>
+  <database>
+    <table name="operator_panel_conferences">
+      <field name="conference" type="string" length="80" primaryKey="true"/>
+      <field name="label" type="string" length="120" default=""/>
+      <field name="parties" type="integer" default="0"/>
+      <field name="active" type="integer" default="0"/>
+      <field name="last_seen" type="datetime" notnull="false"/>
+    </table>
+    <table name="operator_panel_messages">
+      <field name="extension" type="string" length="40" primaryKey="true"/>
+      <field name="sms_count" type="integer" default="0"/>
+      <field name="message_count" type="integer" default="0"/>
+      <field name="updated_at" type="datetime" notnull="false"/>
+    </table>
+  </database>
+  <supported><version>16.0</version></supported>
 </module>
