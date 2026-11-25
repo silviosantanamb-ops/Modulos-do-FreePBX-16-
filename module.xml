@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <rawname>sipmessages</rawname>
+  <name>Painel de Mensagens</name>
+  <version>1.0.5</version>
+  <type>pbx</type>
+  <category>Applications</category>
+  <description>Painel de mensagens internas SIP entre ramais PJSIP locais.</description>
+  <menuitems>
+    <sipmessages>Painel de Mensagens</sipmessages>
+  </menuitems>
+  <depends>
+    <version>13.0</version>
+  </depends>
+</module>
